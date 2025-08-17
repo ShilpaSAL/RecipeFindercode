@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ShoppingCart, Save } from 'lucide-react';
+import { Heart } from 'lucide-react';
 import { Recipe } from '../context/CartContext';
 import { useCart } from '../context/CartContext';
 
@@ -11,11 +11,15 @@ interface RecipeCardProps {
 }
 
 const RecipeCard: React.FC<RecipeCardProps> = ({ recipe, showCart = false }) => {
-  const { addToCart, isInCart } = useCart();
+  const { addToCart, removeFromCart, isInCart } = useCart();
 
-  const handleAddToCart = (e: React.MouseEvent) => {
+  const handleToggleFavorite = (e: React.MouseEvent) => {
     e.preventDefault();
-    addToCart(recipe);
+    if (isInCart(recipe.id)) {
+      removeFromCart(recipe.id);
+    } else {
+      addToCart(recipe);
+    }
   };
 
   return (
@@ -56,16 +60,18 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe, showCart = false }) => 
           
           {showCart && (
             <button 
-              onClick={handleAddToCart}
-              disabled={isInCart(recipe.id)}
+              onClick={handleToggleFavorite}
               className={`p-2 rounded-lg transition-colors ${
                 isInCart(recipe.id) 
-                  ? 'bg-green-100 text-green-600' 
+                  ? 'bg-red-100 text-red-600 hover:bg-red-200' 
                   : 'bg-gray-100 text-gray-600 hover:bg-orange-100 hover:text-orange-600'
               }`}
-              title={isInCart(recipe.id) ? 'Already in cart' : 'Add to cart'}
+              title={isInCart(recipe.id) ? 'Remove from favorites' : 'Add to favorites'}
             >
-              {isInCart(recipe.id) ? <Save size={20} /> : <ShoppingCart size={20} />}
+              <Heart 
+                size={20} 
+                className={isInCart(recipe.id) ? 'fill-current' : ''}
+              />
             </button>
           )}
         </div>

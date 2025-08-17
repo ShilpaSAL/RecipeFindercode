@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ShoppingCart } from 'lucide-react';
+import { Heart } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 
 const Header = () => {
@@ -55,10 +55,10 @@ const Header = () => {
           </nav>
 
           <Link 
-            to="/cart" 
+            to="/favorites" 
             className="relative p-2 text-gray-700 hover:text-orange-600 transition-colors"
           >
-            <ShoppingCart size={24} />
+            <Heart size={24} />
             {cartItems.length > 0 && (
               <span className="absolute -top-1 -right-1 bg-orange-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
                 {cartItems.length}

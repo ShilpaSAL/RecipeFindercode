@@ -1,13 +1,13 @@
 
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowUp, ShoppingCart, Save, Youtube } from 'lucide-react';
+import { ArrowUp, Heart, Youtube } from 'lucide-react';
 import { recipes } from '../data/recipes';
 import { useCart } from '../context/CartContext';
 
 const RecipeDetail = () => {
   const { id } = useParams<{ id: string }>();
-  const { addToCart, isInCart } = useCart();
+  const { addToCart, removeFromCart, isInCart } = useCart();
   
   const recipe = recipes.find(r => r.id === id);
 
@@ -22,8 +22,12 @@ const RecipeDetail = () => {
     );
   }
 
-  const handleAddToCart = () => {
-    addToCart(recipe);
+  const handleToggleFavorite = () => {
+    if (isInCart(recipe.id)) {
+      removeFromCart(recipe.id);
+    } else {
+      addToCart(recipe);
+    }
   };
 
   const openYouTube = () => {
@@ -53,25 +57,18 @@ const RecipeDetail = () => {
             </button>
             
             <button 
-              onClick={handleAddToCart}
-              disabled={isInCart(recipe.id)}
+              onClick={handleToggleFavorite}
               className={`px-4 py-2 rounded-lg transition-colors flex items-center ${
                 isInCart(recipe.id) 
-                  ? 'bg-green-100 text-green-600' 
+                  ? 'bg-red-100 text-red-600 hover:bg-red-200' 
                   : 'bg-orange-600 text-white hover:bg-orange-700'
               }`}
             >
-              {isInCart(recipe.id) ? (
-                <>
-                  <Save className="mr-2" size={18} />
-                  Saved
-                </>
-              ) : (
-                <>
-                  <ShoppingCart className="mr-2" size={18} />
-                  Save Recipe
-                </>
-              )}
+              <Heart 
+                className={`mr-2 ${isInCart(recipe.id) ? 'fill-current' : ''}`} 
+                size={18} 
+              />
+              {isInCart(recipe.id) ? 'Favorited' : 'Add to Favorites'}
             </button>
           </div>
         </div>

@@ -1,11 +1,11 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUp } from 'lucide-react';
+import { ArrowUp, Heart } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import RecipeCard from './RecipeCard';
 
-const Cart = () => {
+const Favorites = () => {
   const { cartItems, clearCart } = useCart();
 
   return (
@@ -20,7 +20,7 @@ const Cart = () => {
             Back to Home
           </Link>
           <h1 className="text-4xl font-bold text-gray-800">
-            My Saved Recipes ({cartItems.length})
+            My Favorite Recipes ({cartItems.length})
           </h1>
           <p className="text-xl text-gray-600 mt-2">
             Your collection of favorite recipes for quick access.
@@ -32,7 +32,7 @@ const Cart = () => {
             onClick={clearCart}
             className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors"
           >
-            Clear All
+            Clear All Favorites
           </button>
         )}
       </div>
@@ -40,11 +40,11 @@ const Cart = () => {
       {cartItems.length === 0 ? (
         <div className="text-center py-16">
           <div className="bg-gray-100 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6">
-            <span className="text-4xl">🛒</span>
+            <Heart className="text-4xl text-gray-400" size={48} />
           </div>
-          <h2 className="text-2xl font-semibold text-gray-700 mb-4">Your cart is empty</h2>
+          <h2 className="text-2xl font-semibold text-gray-700 mb-4">No favorite recipes yet</h2>
           <p className="text-gray-500 mb-8">
-            Start exploring recipes and save your favorites to access them quickly later.
+            Start exploring recipes and heart your favorites to access them quickly later.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
@@ -72,4 +72,4 @@ const Cart = () => {
   );
 };
 
-export default Cart;
+export default Favorites;

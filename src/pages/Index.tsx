@@ -1,21 +1,29 @@
 
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from '../components/Header';
 import HomePage from '../components/HomePage';
 import CategorySearch from '../components/CategorySearch';
 import IngredientSearch from '../components/IngredientSearch';
 import RecipeDetail from '../components/RecipeDetail';
-import Cart from '../components/Cart';
+import Favorites from '../components/Cart';
 import Login from '../components/Login';
+import Signup from '../components/Signup';
 import { CartProvider } from '../context/CartContext';
 import { AuthProvider, useAuth } from '../context/AuthContext';
 
 const AppContent = () => {
   const { isAuthenticated } = useAuth();
+  const location = useLocation();
 
   if (!isAuthenticated) {
-    return <Login />;
+    return (
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="*" element={<Login />} />
+      </Routes>
+    );
   }
 
   return (
@@ -27,7 +35,7 @@ const AppContent = () => {
           <Route path="/category/:type" element={<CategorySearch />} />
           <Route path="/ingredient-search" element={<IngredientSearch />} />
           <Route path="/recipe/:id" element={<RecipeDetail />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/favorites" element={<Favorites />} />
         </Routes>
       </div>
     </CartProvider>
