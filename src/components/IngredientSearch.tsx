@@ -5,7 +5,8 @@ import RecipeCard from './RecipeCard';
 
 const IngredientSearch = () => {
   const [selectedIngredients, setSelectedIngredients] = useState<string[]>([]);
-  const [suggestedRecipes, setSuggestedRecipes] = useState(recipes);
+  const [suggestedRecipes, setSuggestedRecipes] = useState<typeof recipes>([]);
+  const [hasSearched, setHasSearched] = useState(false);
 
   const toggleIngredient = (ingredient: string) => {
     const newSelection = selectedIngredients.includes(ingredient)
@@ -13,12 +14,15 @@ const IngredientSearch = () => {
       : [...selectedIngredients, ingredient];
     
     setSelectedIngredients(newSelection);
-    findMatchingRecipes(newSelection);
+    // Reset search results when ingredients change
+    setSuggestedRecipes([]);
+    setHasSearched(false);
   };
 
-  const findMatchingRecipes = (selectedIngs: string[]) => {
-    if (selectedIngs.length === 0) {
+  const findMatchingRecipes = () => {
+    if (selectedIngredients.length === 0) {
       setSuggestedRecipes(recipes);
+      setHasSearched(true);
       return;
     }
 
@@ -27,7 +31,7 @@ const IngredientSearch = () => {
         ing.toLowerCase().split(' - ')[0]
       );
       
-      return selectedIngs.some(selected => 
+      return selectedIngredients.some(selected => 
         recipeIngredients.some(recipeIng => 
           recipeIng.toLowerCase().includes(selected.toLowerCase()) ||
           selected.toLowerCase().includes(recipeIng.toLowerCase())
@@ -35,14 +39,14 @@ const IngredientSearch = () => {
       );
     }).sort((a, b) => {
       // Sort by number of matching ingredients
-      const aMatches = selectedIngs.filter(selected => 
+      const aMatches = selectedIngredients.filter(selected => 
         a.ingredients.some(ing => 
           ing.toLowerCase().includes(selected.toLowerCase()) ||
           selected.toLowerCase().includes(ing.toLowerCase().split(' - ')[0])
         )
       ).length;
       
-      const bMatches = selectedIngs.filter(selected => 
+      const bMatches = selectedIngredients.filter(selected => 
         b.ingredients.some(ing => 
           ing.toLowerCase().includes(selected.toLowerCase()) ||
           selected.toLowerCase().includes(ing.toLowerCase().split(' - ')[0])
@@ -53,11 +57,13 @@ const IngredientSearch = () => {
     });
 
     setSuggestedRecipes(matchingRecipes);
+    setHasSearched(true);
   };
 
   const clearSelection = () => {
     setSelectedIngredients([]);
-    setSuggestedRecipes(recipes);
+    setSuggestedRecipes([]);
+    setHasSearched(false);
   };
 
   return (
@@ -67,7 +73,7 @@ const IngredientSearch = () => {
           Find Recipes by Ingredients
         </h1>
         <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-          Select the ingredients you have at home, and we'll suggest recipes you can make right now!
+          Select the ingredients you have at home, then click search to find recipes you can make right now!
         </p>
       </div>
 
@@ -87,7 +93,7 @@ const IngredientSearch = () => {
           )}
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 mb-6">
           {ingredients.map(ingredient => (
             <button
               key={ingredient}
@@ -102,36 +108,79 @@ const IngredientSearch = () => {
             </button>
           ))}
         </div>
-      </div>
 
-      {/* Recipe Suggestions */}
-      <div>
-        <h2 className="text-2xl font-semibold text-gray-800 mb-6">
-          Recipe Suggestions ({suggestedRecipes.length} found)
-        </h2>
-        
-        {selectedIngredients.length > 0 && (
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
-            <p className="text-blue-800">
-              <strong>Your ingredients:</strong> {selectedIngredients.join(', ')}
+        {/* Search Button - Always Visible */}
+        <div className="text-center">
+          <button
+            onClick={findMatchingRecipes}
+            className={`px-8 py-3 rounded-lg font-semibold text-lg transition-all duration-200 ${
+              selectedIngredients.length === 0
+                ? 'bg-orange-500 hover:bg-orange-600 text-white shadow-lg hover:shadow-xl transform hover:scale-105'
+                : 'bg-orange-500 hover:bg-orange-600 text-white shadow-lg hover:shadow-xl transform hover:scale-105'
+            }`}
+          >
+            🔍 Search Recipes
+          </button>
+          {selectedIngredients.length === 0 && (
+            <p className="text-sm text-gray-500 mt-2">
+              Click to see all recipes, or select ingredients for filtered results
             </p>
-          </div>
-        )}
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {suggestedRecipes.map(recipe => (
-            <RecipeCard key={recipe.id} recipe={recipe} showCart={false} />
-          ))}
+          )}
+          {selectedIngredients.length > 0 && (
+            <p className="text-sm text-gray-600 mt-2">
+              {selectedIngredients.length} ingredient(s) selected - click to search
+            </p>
+          )}
         </div>
-
-        {suggestedRecipes.length === 0 && selectedIngredients.length > 0 && (
-          <div className="text-center py-12">
-            <p className="text-xl text-gray-500">
-              No recipes found with your selected ingredients. Try selecting different ingredients!
-            </p>
-          </div>
-        )}
       </div>
+
+      {/* Recipe Suggestions - Only shown after search */}
+      {hasSearched && (
+        <div>
+          <h2 className="text-2xl font-semibold text-gray-800 mb-6">
+            Recipe Suggestions ({suggestedRecipes.length} found)
+          </h2>
+          
+          {selectedIngredients.length > 0 && (
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+              <p className="text-blue-800">
+                <strong>Your ingredients:</strong> {selectedIngredients.join(', ')}
+              </p>
+            </div>
+          )}
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {suggestedRecipes.map(recipe => (
+              <RecipeCard key={recipe.id} recipe={recipe} showCart={false} />
+            ))}
+          </div>
+
+          {suggestedRecipes.length === 0 && selectedIngredients.length > 0 && (
+            <div className="text-center py-12">
+              <p className="text-xl text-gray-500">
+                No recipes found with your selected ingredients. Try selecting different ingredients!
+              </p>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Initial State - No recipes shown until search */}
+      {!hasSearched && (
+        <div className="text-center py-12">
+          <div className="bg-gray-50 rounded-xl p-8 max-w-2xl mx-auto">
+            <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+              Ready to Find Recipes?
+            </h2>
+            <p className="text-gray-600 mb-6">
+              Select ingredients above and click the search button to discover recipes you can make with what you have!
+            </p>
+            <div className="text-sm text-gray-500">
+              💡 Tip: You can search without selecting any ingredients to see all available recipes
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

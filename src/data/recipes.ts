@@ -1,4 +1,3 @@
-
 export interface Recipe {
   id: string;
   name: string;
@@ -14,10 +13,26 @@ export interface Recipe {
 
 // Common ingredients list for ingredient search
 export const ingredients = [
-  'Rice', 'Chicken', 'Onions', 'Tomatoes', 'Garlic', 'Ginger', 'Coconut', 'Lentils', 
-  'Potatoes', 'Paneer', 'Yogurt', 'Spices', 'Oil', 'Butter', 'Cream', 'Flour', 
-  'Green Chilies', 'Curry Leaves', 'Cumin', 'Mustard Seeds', 'Turmeric', 'Cilantro',
-  'Mint', 'Cashews', 'Peas', 'Cauliflower', 'Spinach', 'Okra', 'Eggplant', 'Beans'
+  // Grains & Flours
+  'Rice', 'Basmati Rice', 'Wheat Flour', 'Semolina', 'Rice Flour', 'Black Gram', 'Toor Dal', 'Yellow Lentils', 'Black Lentils', 'Kidney Beans', 'Chickpeas', 'Moong Dal', 'Besan', 'Gram Flour',
+  
+  // Proteins
+  'Chicken', 'Fish', 'Paneer', 'Eggs', 'Lamb', 'Mutton', 'Shrimp', 'Tofu', 'Beef', 'Pork',
+  
+  // Vegetables
+  'Onions', 'Tomatoes', 'Potatoes', 'Cauliflower', 'Spinach', 'Okra', 'Eggplant', 'Beans', 'Green Peas', 'Carrots', 'Bell Peppers', 'Cucumber', 'Raw Bananas', 'Mixed Vegetables', 'Brinjal', 'Bottle Gourd', 'Ridge Gourd', 'Snake Gourd', 'Drumsticks', 'Plantains', 'Mushrooms', 'Broccoli', 'Cabbage', 'Radish', 'Turnip', 'Sweet Potato', 'Yam', 'Taro', 'Colocasia', 'Arbi',
+  
+  // Aromatics & Herbs
+  'Garlic', 'Ginger', 'Green Chilies', 'Curry Leaves', 'Cilantro', 'Mint', 'Bay Leaves', 'Fenugreek Seeds', 'Asafoetida', 'Lemongrass', 'Kaffir Lime Leaves', 'Basil', 'Oregano', 'Thyme', 'Rosemary',
+  
+  // Dairy & Fats
+  'Yogurt', 'Curd', 'Butter', 'Ghee', 'Cream', 'Milk', 'Coconut Milk', 'Coconut Oil', 'Cheese', 'Cottage Cheese', 'Ricotta', 'Mozzarella', 'Cheddar', 'Parmesan',
+  
+  // Nuts & Seeds
+  'Cashews', 'Almonds', 'Peanuts', 'Sesame Seeds', 'Poppy Seeds', 'Sunflower Seeds', 'Pistachios', 'Walnuts', 'Hazelnuts', 'Macadamia Nuts', 'Pine Nuts', 'Chia Seeds', 'Flax Seeds', 'Pumpkin Seeds',
+  
+  // Spices & Seasonings
+  'Spices', 'Cumin', 'Mustard Seeds', 'Turmeric', 'Red Chilies', 'Black Pepper', 'Cardamom', 'Cinnamon', 'Cloves', 'Nutmeg', 'Saffron', 'Coriander Seeds', 'Fennel Seeds', 'Ajwain', 'Star Anise', 'Tamarind', 'Jaggery', 'Sugar', 'Salt', 'Lemon Juice', 'Vinegar', 'White Pepper', 'Paprika', 'Cayenne Pepper', 'Oregano', 'Basil', 'Thyme', 'Rosemary', 'Sage', 'Marjoram', 'Tarragon', 'Dill', 'Parsley', 'Chives', 'Scallions', 'Shallots', 'Leeks', 'Garlic Powder', 'Onion Powder', 'Ginger Powder', 'Chili Powder', 'Coriander Powder', 'Cumin Powder', 'Garam Masala', 'Tandoori Masala', 'Chaat Masala', 'Pav Bhaji Masala', 'Sambar Powder', 'Rasam Powder', 'Kadai Masala', 'Chicken Masala', 'Fish Masala', 'Meat Masala', 'Vegetable Masala', 'Biryani Masala', 'Pulao Masala', 'Tea Masala', 'Ginger Garlic Paste', 'Onion Paste', 'Tomato Paste', 'Coconut Paste', 'Mint Chutney', 'Coconut Chutney', 'Tamarind Chutney', 'Tamarind Paste', 'Jaggery Syrup', 'Sugar Syrup', 'Rose Syrup', 'Kesar Milk', 'Badam Milk', 'Thandai', 'Lassi', 'Buttermilk', 'Raita', 'Pickle', 'Papad', 'Pappadam', 'Poppadum', 'Appalam', 'Vadai', 'Pakora', 'Fritters', 'Kofta', 'Dumplings', 'Kebab', 'Tikka', 'Cutlet', 'Patties', 'Rolls', 'Wraps', 'Sandwiches', 'Burgers', 'Pizza', 'Pasta', 'Noodles', 'Vermicelli', 'Sevai', 'Idiyappam', 'String Hoppers', 'Appam', 'Dosa', 'Idli', 'Uttapam', 'Puttu', 'Kozhukattai', 'Modak', 'Laddu', 'Barfi', 'Halwa', 'Kheer', 'Payasam', 'Phirni', 'Rasgulla', 'Gulab Jamun', 'Jalebi', 'Rasmalai', 'Sandesh', 'Mysore Pak', 'Besan Ladoo', 'Coconut Barfi', 'Milk Cake', 'Kulfi', 'Ice Cream', 'Shrikhand', 'Misti Doi', 'Dahi Vada', 'Dahi Puri', 'Bhel Puri', 'Sev Puri', 'Pani Puri', 'Gol Gappa', 'Chaat', 'Samosa Chaat', 'Dahi Bhalla', 'Aloo Tikki', 'Vada Pav', 'Dabeli', 'Pav Bhaji', 'Mumbai Sandwich', 'Bombay Toast', 'Masala Dosa', 'Paper Dosa', 'Rava Dosa', 'Onion Dosa', 'Mysore Dosa', 'Set Dosa', 'Neer Dosa', 'Pesarattu', 'Adai', 'Pongal', 'Upma', 'Poha', 'Aval', 'Flattened Rice', 'Puffed Rice', 'Murmura', 'Kurmura', 'Chivda', 'Mixture', 'Namkeen', 'Snacks', 'Chips', 'Crackers', 'Biscuits', 'Cookies', 'Cakes', 'Breads', 'Roti', 'Naan', 'Paratha', 'Kulcha', 'Bhatura', 'Poori', 'Chapati', 'Phulka', 'Tandoori Roti', 'Missi Roti', 'Bajra Roti', 'Jowar Roti', 'Ragi Roti', 'Multigrain Roti', 'Stuffed Paratha', 'Aloo Paratha', 'Gobi Paratha', 'Methi Paratha', 'Paneer Paratha', 'Onion Paratha', 'Laccha Paratha', 'Layered Paratha', 'Tandoori Naan', 'Butter Naan', 'Garlic Naan', 'Cheese Naan', 'Peshawari Naan', 'Rogini Naan', 'Keema Naan', 'Aloo Naan', 'Paneer Naan', 'Mushroom Naan', 'Mixed Vegetable Naan', 'Stuffed Naan', 'Plain Naan', 'Whole Wheat Naan', 'Brown Bread', 'White Bread', 'Milk Bread', 'Sandwich Bread', 'Bun', 'Pav', 'Burger Bun', 'Hot Dog Bun', 'Dinner Roll', 'Bread Roll', 'Croissant', 'Danish', 'Muffin', 'Cupcake', 'Donut', 'Bagel', 'Pita Bread', 'Focaccia', 'Ciabatta', 'Sourdough', 'Rye Bread', 'Oat Bread', 'Corn Bread', 'Banana Bread', 'Zucchini Bread', 'Pumpkin Bread', 'Carrot Cake', 'Chocolate Cake', 'Vanilla Cake', 'Red Velvet Cake', 'Black Forest Cake', 'Cheesecake', 'Tiramisu', 'Pudding', 'Custard', 'Mousse', 'Souffle', 'Trifle', 'Eclair', 'Profiterole', 'Cannoli', 'Baklava', 'Rose Water', 'Kewra Water', 'Boondi', 'Puris', 'Mint Water', 'Yeast', 'Baking Powder', 'Baking Soda', 'Tea', 'Coffee Powder', 'Water', 'Oil', 'Flour', 'Coconut'
 ];
 
 export const recipes: Recipe[] = [
@@ -27,11 +42,21 @@ export const recipes: Recipe[] = [
     name: 'Butter Chicken',
     category: 'north-indian',
     ingredients: ['Chicken', 'Butter', 'Tomatoes', 'Cream', 'Onions', 'Garlic', 'Ginger', 'Spices'],
-    instructions: ['Marinate chicken', 'Cook in butter', 'Add tomato sauce', 'Simmer with cream'],
+    instructions: [
+      'Marinate chicken pieces with yogurt, ginger-garlic paste, red chili powder, turmeric, and salt for 30 minutes',
+      'Heat oil in a pan and fry the marinated chicken until golden brown, then set aside',
+      'In the same pan, melt butter and sauté finely chopped onions until translucent',
+      'Add ginger-garlic paste and cook for 2 minutes until fragrant',
+      'Add tomato puree and cook until oil starts to separate from the mixture',
+      'Add garam masala, red chili powder, and salt to taste',
+      'Add the fried chicken pieces and simmer for 10-15 minutes',
+      'Pour in fresh cream and kasoori methi, simmer for 5 more minutes',
+      'Garnish with fresh coriander leaves and serve hot with naan or rice'
+    ],
     cookingTime: '45 mins',
     difficulty: 'Medium',
     youtubeUrl: 'https://youtu.be/a03U45jFxOI',
-    image: 'h.unsplash.com/photo-1603894584373-5ac82b2ae398?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=500&h=300&fit=crop',
     description: 'Creamy and rich North Indian chicken curry'
   },
   {
@@ -39,11 +64,24 @@ export const recipes: Recipe[] = [
     name: 'Dal Makhani',
     category: 'north-indian',
     ingredients: ['Black Lentils', 'Kidney Beans', 'Butter', 'Cream', 'Tomatoes', 'Onions', 'Spices'],
-    instructions: ['Soak lentils overnight', 'Cook slowly', 'Add butter and cream', 'Simmer'],
+    instructions: [
+      'Soak black lentils and kidney beans overnight in water',
+      'Drain the water and pressure cook the lentils with fresh water for 4-5 whistles',
+      'Once cooked, mash the lentils slightly while keeping some whole',
+      'Heat butter in a heavy-bottomed pan and add cumin seeds',
+      'Add finely chopped onions and sauté until golden brown',
+      'Add ginger-garlic paste and cook for 2 minutes',
+      'Add tomato puree and cook until oil starts to separate',
+      'Add red chili powder, garam masala, and salt to taste',
+      'Add the cooked lentils and simmer on low heat for 30-40 minutes',
+      'Stir occasionally to prevent sticking and add water if needed',
+      'Finish with fresh cream and butter, simmer for 5 minutes',
+      'Garnish with fresh coriander and serve hot with rice or roti'
+    ],
     cookingTime: '2 hours',
     difficulty: 'Medium',
     youtubeUrl: 'https://youtube.com/watch?v=sample2',
-    image: 'hages.unsplash.com/photo-1546833999-b9f581a1996d?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=500&h=300&fit=crop',
     description: 'Rich and creamy black lentil curry'
   },
   {
@@ -51,11 +89,23 @@ export const recipes: Recipe[] = [
     name: 'Naan',
     category: 'north-indian',
     ingredients: ['Flour', 'Yogurt', 'Yeast', 'Salt', 'Oil', 'Milk'],
-    instructions: ['Mix ingredients', 'Knead dough', 'Let rise', 'Cook in tandoor'],
+    instructions: [
+      'In a small bowl, mix warm milk with sugar and yeast, let it froth for 10 minutes',
+      'In a large mixing bowl, combine all-purpose flour, salt, and baking powder',
+      'Add the activated yeast mixture, yogurt, and oil to the flour',
+      'Knead the dough for 10-15 minutes until smooth and elastic',
+      'Cover the dough with a damp cloth and let it rise in a warm place for 2 hours',
+      'Punch down the dough and divide into equal-sized balls',
+      'Roll each ball into an oval or round shape, about 1/4 inch thick',
+      'Heat a tawa or griddle on medium-high heat',
+      'Place the rolled naan on the hot tawa and cook until bubbles appear',
+      'Flip and cook the other side until golden brown spots appear',
+      'Brush with butter and serve hot with curry'
+    ],
     cookingTime: '2 hours',
     difficulty: 'Medium',
     youtubeUrl: 'https://youtube.com/watch?v=sample3',
-    image: 'hes.unsplash.com/photo-1601050690597-df0568f70950?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=500&h=300&fit=crop',
     description: 'Soft and fluffy Indian bread'
   },
   {
@@ -63,11 +113,25 @@ export const recipes: Recipe[] = [
     name: 'Palak Paneer',
     category: 'north-indian',
     ingredients: ['Spinach', 'Paneer', 'Onions', 'Tomatoes', 'Garlic', 'Ginger', 'Spices'],
-    instructions: ['Blanch spinach', 'Make puree', 'Cook paneer', 'Combine'],
+    instructions: [
+      'Wash spinach leaves thoroughly and blanch in boiling water for 2-3 minutes',
+      'Immediately transfer to ice-cold water to retain the green color',
+      'Blend the blanched spinach with ginger and garlic to make a smooth puree',
+      'Cut paneer into cubes and lightly fry them until golden brown',
+      'Heat oil in a pan and add cumin seeds',
+      'Add finely chopped onions and sauté until translucent',
+      'Add ginger-garlic paste and cook for 2 minutes',
+      'Add tomato puree and cook until oil starts to separate',
+      'Add turmeric powder, red chili powder, garam masala, and salt',
+      'Add the spinach puree and cook for 5-7 minutes',
+      'Add the fried paneer cubes and simmer for 3-4 minutes',
+      'Finish with fresh cream and kasoori methi',
+      'Garnish with fresh coriander and serve hot with roti or rice'
+    ],
     cookingTime: '30 mins',
     difficulty: 'Easy',
     youtubeUrl: 'https://youtube.com/watch?v=sample4',
-    image: 'h//images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=500&h=300&fit=crop',
     description: 'Spinach curry with cottage cheese'
   },
   {
@@ -75,11 +139,24 @@ export const recipes: Recipe[] = [
     name: 'Biryani',
     category: 'north-indian',
     ingredients: ['Basmati Rice', 'Chicken', 'Onions', 'Saffron', 'Yogurt', 'Spices'],
-    instructions: ['Marinate chicken', 'Layer rice and chicken', 'Cook on dum', 'Serve hot'],
+    instructions: [
+      'Marinate chicken pieces with yogurt, ginger-garlic paste, red chili powder, turmeric, and salt for 2 hours',
+      'Wash and soak basmati rice for 30 minutes, then drain',
+      'Heat oil in a large pan and add whole spices (cardamom, cinnamon, bay leaves)',
+      'Add sliced onions and sauté until golden brown',
+      'Add the marinated chicken and cook until 70% done',
+      'Remove chicken and set aside',
+      'In the same pan, add more oil and layer half the par-cooked rice',
+      'Sprinkle saffron milk, fried onions, and mint leaves',
+      'Layer the cooked chicken on top',
+      'Add the remaining rice and sprinkle more saffron milk',
+      'Cover tightly with aluminum foil and lid, cook on dum (slow heat) for 25-30 minutes',
+      'Let it rest for 10 minutes, then gently mix and serve hot with raita'
+    ],
     cookingTime: '1.5 hours',
     difficulty: 'Hard',
     youtubeUrl: 'https://youtube.com/watch?v=sample5',
-    image: 'https/es.unsplash.com/photo-1563379091339-03246963d96c?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1563379091339-03246963d96c?w=500&h=300&fit=crop',
     description: 'Aromatic rice dish with spiced meat'
   },
   {
@@ -87,10 +164,24 @@ export const recipes: Recipe[] = [
     name: 'Chole Bhature',
     category: 'north-indian',
     ingredients: ['Chickpeas', 'Flour', 'Yogurt', 'Onions', 'Tomatoes', 'Spices'],
-    instructions: ['Cook chickpeas', 'Make bhature dough', 'Fry bhature', 'Serve together'],
+    instructions: [
+      'Soak chickpeas overnight in water with a pinch of baking soda',
+      'Pressure cook chickpeas with salt and tea bag for 4-5 whistles',
+      'For the gravy: Heat oil and add cumin seeds, bay leaves, and cardamom',
+      'Add finely chopped onions and sauté until golden brown',
+      'Add ginger-garlic paste and cook for 2 minutes',
+      'Add tomato puree and cook until oil separates',
+      'Add red chili powder, garam masala, amchur powder, and salt',
+      'Add the cooked chickpeas and simmer for 15-20 minutes',
+      'For bhature: Mix all-purpose flour, semolina, yogurt, oil, and salt',
+      'Knead into a soft dough and let it rest for 30 minutes',
+      'Divide into small balls and roll into circles',
+      'Deep fry in hot oil until golden brown and puffed up',
+      'Serve hot bhature with spicy chole and pickled onions'
+    ],
     cookingTime: '1 hour',
     difficulty: 'Medium',
-    youtubeUrl: 'ht/youtube.com/watch?v=sample6',
+    youtubeUrl: 'https://youtube.com/watch?v=sample6',
     image: 'https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=500&h=300&fit=crop',
     description: 'Spicy chickpeas with fried bread'
   },
@@ -99,10 +190,22 @@ export const recipes: Recipe[] = [
     name: 'Rajma',
     category: 'north-indian',
     ingredients: ['Kidney Beans', 'Onions', 'Tomatoes', 'Ginger', 'Garlic', 'Spices'],
-    instructions: ['Soak beans overnight', 'Cook beans', 'Make gravy', 'Combine and simmer'],
+    instructions: [
+      'Soak kidney beans overnight in water',
+      'Pressure cook beans with salt and water for 5-6 whistles until soft',
+      'Heat oil in a pan and add cumin seeds',
+      'Add finely chopped onions and sauté until golden brown',
+      'Add ginger-garlic paste and cook for 2 minutes',
+      'Add tomato puree and cook until oil starts to separate',
+      'Add red chili powder, turmeric, garam masala, and salt to taste',
+      'Add the cooked kidney beans with their water',
+      'Simmer on low heat for 20-25 minutes until gravy thickens',
+      'Stir occasionally to prevent sticking',
+      'Finish with fresh coriander leaves and serve hot with rice'
+    ],
     cookingTime: '1 hour',
     difficulty: 'Easy',
-    youtubeUrl: 'httpsoutube.com/watch?v=sample7',
+    youtubeUrl: 'https://youtube.com/watch?v=sample7',
     image: 'https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=500&h=300&fit=crop',
     description: 'Kidney bean curry'
   },
@@ -111,11 +214,24 @@ export const recipes: Recipe[] = [
     name: 'Aloo Gobi',
     category: 'north-indian',
     ingredients: ['Potatoes', 'Cauliflower', 'Onions', 'Tomatoes', 'Turmeric', 'Spices'],
-    instructions: ['Cut vegetables', 'Sauté onions', 'Add vegetables', 'Cook until tender'],
+    instructions: [
+      'Cut potatoes into small cubes and cauliflower into florets',
+      'Heat oil in a pan and add cumin seeds',
+      'Add finely chopped onions and sauté until translucent',
+      'Add ginger-garlic paste and cook for 2 minutes',
+      'Add tomato puree and cook until oil separates',
+      'Add turmeric powder, red chili powder, coriander powder, and salt',
+      'Add potato cubes and cook for 5 minutes',
+      'Add cauliflower florets and mix well',
+      'Cover and cook on medium heat for 15-20 minutes',
+      'Stir occasionally to prevent sticking',
+      'Cook until vegetables are tender and well-coated with spices',
+      'Garnish with fresh coriander and serve hot with roti or rice'
+    ],
     cookingTime: '25 mins',
     difficulty: 'Easy',
     youtubeUrl: 'https://youtube.com/watch?v=sample8',
-    image: 'https:/s.unsplash.com/photo-1588166524941-3bf61a9c41db?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?w=500&h=300&fit=crop',
     description: 'Potato and cauliflower curry'
   },
   {
@@ -123,11 +239,24 @@ export const recipes: Recipe[] = [
     name: 'Tandoori Chicken',
     category: 'north-indian',
     ingredients: ['Chicken', 'Yogurt', 'Lemon Juice', 'Ginger', 'Garlic', 'Tandoori Masala'],
-    instructions: ['Marinate chicken', 'Let sit overnight', 'Cook in tandoor', 'Serve hot'],
+    instructions: [
+      'Clean and pat dry chicken pieces',
+      'Make deep cuts on chicken pieces for better marination',
+      'In a bowl, mix yogurt, ginger-garlic paste, lemon juice, and tandoori masala',
+      'Add red chili powder, turmeric, garam masala, and salt to taste',
+      'Apply the marinade generously on chicken pieces',
+      'Cover and refrigerate for at least 4 hours or overnight',
+      'Preheat oven to 200°C (400°F) or heat a grill',
+      'Place marinated chicken on a baking tray or grill',
+      'Cook for 25-30 minutes, turning once halfway through',
+      'Brush with oil or butter during cooking',
+      'Cook until chicken is charred and cooked through',
+      'Serve hot with mint chutney and onion rings'
+    ],
     cookingTime: '45 mins',
     difficulty: 'Medium',
     youtubeUrl: 'https://youtube.com/watch?v=sample9',
-    image: 'https:/.unsplash.com/photo-1599487488170-d11ec9c172f0?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=500&h=300&fit=crop',
     description: 'Marinated grilled chicken'
   },
   {
@@ -135,11 +264,24 @@ export const recipes: Recipe[] = [
     name: 'Dal Tadka',
     category: 'north-indian',
     ingredients: ['Yellow Lentils', 'Onions', 'Tomatoes', 'Cumin', 'Mustard Seeds', 'Spices'],
-    instructions: ['Cook lentils', 'Make tadka', 'Pour over dal', 'Garnish'],
+    instructions: [
+      'Wash and pressure cook yellow lentils with turmeric and salt for 3-4 whistles',
+      'Once cooked, whisk the dal until smooth and creamy',
+      'Heat oil in a pan and add mustard seeds and cumin seeds',
+      'When seeds crackle, add finely chopped onions and sauté until golden',
+      'Add ginger-garlic paste and cook for 2 minutes',
+      'Add chopped tomatoes and cook until soft',
+      'Add red chili powder, garam masala, and salt to taste',
+      'Add the cooked dal and simmer for 10-15 minutes',
+      'Adjust consistency by adding water if needed',
+      'For final tadka: Heat ghee and add red chilies, garlic, and asafoetida',
+      'Pour the hot tadka over the dal',
+      'Garnish with fresh coriander and serve hot with rice or roti'
+    ],
     cookingTime: '30 mins',
     difficulty: 'Easy',
     youtubeUrl: 'https://youtube.com/watch?v=sample10',
-    image: 'https:.unsplash.com/photo-1585032226651-759b368d7246?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?w=500&h=300&fit=crop',
     description: 'Tempered lentil curry'
   },
   {
@@ -151,7 +293,7 @@ export const recipes: Recipe[] = [
     cookingTime: '30 mins',
     difficulty: 'Easy',
     youtubeUrl: 'https://youtube.com/watch?v=sample11',
-    image: 'https:s.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1631452180539-96aca7d48617?w=500&h=300&fit=crop',
     description: 'Grilled cottage cheese cubes'
   },
   {
@@ -163,7 +305,7 @@ export const recipes: Recipe[] = [
     cookingTime: '20 mins',
     difficulty: 'Easy',
     youtubeUrl: 'https://youtube.com/watch?v=sample12',
-    image: 'httpsages.unsplash.com/photo-1574653853027-5ac8c5c222dc?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1574653853027-5ac8c5c222dc?w=500&h=300&fit=crop',
     description: 'Simple Indian flatbread'
   },
   {
@@ -175,7 +317,7 @@ export const recipes: Recipe[] = [
     cookingTime: '25 mins',
     difficulty: 'Easy',
     youtubeUrl: 'https://youtube.com/watch?v=sample13',
-    image: 'httpimages.unsplash.com/photo-1631452180539-96aca7d48617?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=500&h=300&fit=crop',
     description: 'Spicy paneer cooked in wok'
   },
   {
@@ -187,7 +329,7 @@ export const recipes: Recipe[] = [
     cookingTime: '1 hour',
     difficulty: 'Medium',
     youtubeUrl: 'https://youtube.com/watch?v=sample14',
-    image: '.unsplash.com/photo-1601050690597-df0568f70950?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=500&h=300&fit=crop',
     description: 'Crispy fried pastry with potato filling'
   },
   {
@@ -199,7 +341,7 @@ export const recipes: Recipe[] = [
     cookingTime: '5 mins',
     difficulty: 'Easy',
     youtubeUrl: 'https://youtube.com/watch?v=sample15',
-    image: 'https:/nsplash.com/photo-1571091718767-18b5b1457add?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=500&h=300&fit=crop',
     description: 'Refreshing yogurt drink'
   },
   {
@@ -211,7 +353,7 @@ export const recipes: Recipe[] = [
     cookingTime: '20 mins',
     difficulty: 'Easy',
     youtubeUrl: 'https://youtube.com/watch?v=sample16',
-    image: 'httges.unsplash.com/photo-1574653853027-5ac8c5c222dc?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=500&h=300&fit=crop',
     description: 'Layered flatbread'
   },
   {
@@ -223,7 +365,7 @@ export const recipes: Recipe[] = [
     cookingTime: '1 hour',
     difficulty: 'Medium',
     youtubeUrl: 'https://youtube.com/watch?v=sample17',
-    image: 'https://plash.com/photo-1601050690597-df0568f70950?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1574653853027-5ac8c5c222dc?w=500&h=300&fit=crop',
     description: 'Leavened Indian bread'
   },
   {
@@ -235,11 +377,10 @@ export const recipes: Recipe[] = [
     cookingTime: '40 mins',
     difficulty: 'Medium',
     youtubeUrl: 'https://youtube.com/watch?v=sample18',
-    image: 'https://plash.com/photo-1603894584373-5ac82b2ae398?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=500&h=300&fit=crop',
     description: 'Traditional chicken curry'
   },
   {
-    
     id: 'ni-19',
     name: 'Bhindi Masala',
     category: 'north-indian',
@@ -248,7 +389,7 @@ export const recipes: Recipe[] = [
     cookingTime: '25 mins',
     difficulty: 'Easy',
     youtubeUrl: 'https://youtube.com/watch?v=sample19',
-    image: 'https://imageash.com/photo-1585937421612-70a008356fbe?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?w=500&h=300&fit=crop',
     description: 'Spiced okra curry'
   },
   {
@@ -260,7 +401,7 @@ export const recipes: Recipe[] = [
     cookingTime: '45 mins',
     difficulty: 'Hard',
     youtubeUrl: 'https://youtube.com/watch?v=sample20',
-    image: 'https://imaglash.com/photo-1631452180539-96aca7d48617?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1631452180539-96aca7d48617?w=500&h=300&fit=crop',
     description: 'Fried cottage cheese balls in curry'
   },
   {
@@ -272,7 +413,7 @@ export const recipes: Recipe[] = [
     cookingTime: '20 mins',
     difficulty: 'Easy',
     youtubeUrl: 'https://youtube.com/watch?v=sample21',
-    image: 'https://imnsplash.com/photo-1563379091339-03246963d96c?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1563379091339-03246963d96c?w=500&h=300&fit=crop',
     description: 'Cumin flavored rice'
   },
   {
@@ -284,7 +425,7 @@ export const recipes: Recipe[] = [
     cookingTime: '30 mins',
     difficulty: 'Easy',
     youtubeUrl: 'https://youtube.com/watch?v=sample22',
-    image: 'https:/.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=500&h=300&fit=crop',
     description: 'Cottage cheese and peas curry'
   },
   {
@@ -296,7 +437,7 @@ export const recipes: Recipe[] = [
     cookingTime: '10 mins',
     difficulty: 'Easy',
     youtubeUrl: 'https://youtube.com/watch?v=sample23',
-    image: 'https://imalash.com/photo-1571091718767-18b5b1457add?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=500&h=300&fit=crop',
     description: 'Yogurt based side dish'
   },
   {
@@ -308,7 +449,7 @@ export const recipes: Recipe[] = [
     cookingTime: '30 mins',
     difficulty: 'Medium',
     youtubeUrl: 'https://youtube.com/watch?v=sample24',
-    image: 'https://ima.com/photo-1601050690597-df0568f70950?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=500&h=300&fit=crop',
     description: 'Crispy shells with flavored water'
   },
   {
@@ -316,169 +457,248 @@ export const recipes: Recipe[] = [
     name: 'Gulab Jamun',
     category: 'north-indian',
     ingredients: ['Milk Powder', 'Flour', 'Ghee', 'Sugar', 'Cardamom', 'Rose Water'],
-    instructions: ['Make dough', 'Shape balls', 'Deep fry', 'Soak in syrup'],
+    instructions: [
+      'In a bowl, mix 1 cup milk powder, 1/4 cup all-purpose flour, and 1/4 tsp baking soda',
+      'Add 2 tbsp ghee and mix well with your fingers until it resembles breadcrumbs',
+      'Gradually add 1/4 cup milk and knead into a soft, smooth dough',
+      'Cover the dough and let it rest for 10 minutes',
+      'Divide the dough into small portions and roll into smooth balls (size of marbles)',
+      'Make sure there are no cracks in the balls',
+      'For sugar syrup: In a pan, add 2 cups sugar and 2 cups water',
+      'Add 4-5 cardamom pods and bring to a boil',
+      'Simmer for 10 minutes until syrup is slightly thick',
+      'Add 1 tsp rose water and keep the syrup warm',
+      'Heat oil in a deep pan on medium heat',
+      'Gently slide the jamun balls into hot oil',
+      'Fry on medium heat until golden brown, turning occasionally',
+      'Remove from oil and immediately transfer to warm sugar syrup',
+      'Let the jamuns soak in syrup for at least 2 hours',
+      'Serve warm or at room temperature, garnished with chopped nuts'
+    ],
     cookingTime: '45 mins',
     difficulty: 'Medium',
     youtubeUrl: 'https://youtube.com/watch?v=sample25',
-    image: 'https://imaglash.com/photo-1571091718767-18b5b1457add?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=500&h=300&fit=crop',
     description: 'Sweet milk dumplings in syrup'
   },
   {
-  id: 'ni-26',
-  name: 'Paneer Lababdar',
-  category: 'north-indian',
-  ingredients: ['Paneer', 'Tomatoes', 'Onions', 'Cream', 'Spices'],
-  instructions: ['Sauté onions and tomatoes', 'Blend and cook with spices', 'Add paneer and cream'],
-  cookingTime: '35 mins',
-  difficulty: 'Medium',
-  youtubeUrl: 'https://youtube.com/watch?v=sample61',
-  image: 'https://sourcesh.com/featured/?paneer,curry',
-  description: 'Rich and creamy tomato-paneer curry'
-},
-{
-  id: 'ni-27',
-  name: 'Gobi Paratha',
-  category: 'north-indian',
-  ingredients: ['Cauliflower', 'Wheat Flour', 'Spices', 'Oil'],
-  instructions: ['Grate cauliflower', 'Prepare stuffing', 'Roll and cook parathas'],
-  cookingTime: '30 mins',
-  difficulty: 'Easy',
-  youtubeUrl: 'https://youtube.com/watch?v=sample62',
-  image: 'https://source.sh.com/featured/?gobi,paratha',
-  description: 'Spiced cauliflower stuffed flatbread'
-},
-{
-  id: 'ni-28',
-  name: 'Rajma Masala',
-  category: 'north-indian',
-  ingredients: ['Kidney Beans', 'Tomatoes', 'Onions', 'Spices'],
-  instructions: ['Soak and cook beans', 'Prepare masala base', 'Simmer together'],
-  cookingTime: '45 mins',
-  difficulty: 'Medium',
-  youtubeUrl: 'https://youtube.com/watch?v=sample63',
-  image: 'https://sourcesh.com/featured/?rajma,curry',
-  description: 'Comforting kidney bean curry'
-},
-{
-  id: 'ni-29',
-  name: 'Tandoori Roti',
-  category: 'north-indian',
-  ingredients: ['Wheat Flour', 'Yogurt', 'Salt', 'Baking Soda'],
-  instructions: ['Prepare dough', 'Roll and bake in tandoor or pan'],
-  cookingTime: '20 mins',
-  difficulty: 'Easy',
-  youtubeUrl: 'https://youtube.com/watch?v=sample64',
-  image: 'https://sourplash.com/featured/?tandoori,roti',
-  description: 'Leavened flatbread with smoky flavor'
-},
-{
-  id: 'ni-30',
-  name: 'Aloo Gobi',
-  category: 'north-indian',
-  ingredients: ['Potatoes', 'Cauliflower', 'Spices', 'Onions'],
-  instructions: ['Sauté vegetables with spices', 'Cook until tender'],
-  cookingTime: '25 mins',
-  difficulty: 'Easy',
-  youtubeUrl: 'https://youtube.com/watch?v=sample65',
-  image: 'https://souplash.com/featured/?aloo,gobi',
-  description: 'Dry sabzi with potatoes and cauliflower'
-},
-{
-  id: 'ni-31',
-  name: 'Palak Paneer',
-  category: 'north-indian',
-  ingredients: ['Spinach', 'Paneer', 'Cream', 'Spices'],
-  instructions: ['Blanch spinach', 'Blend with spices', 'Add paneer cubes'],
-  cookingTime: '30 mins',
-  difficulty: 'Medium',
-  youtubeUrl: 'https://youtube.com/watch?v=sample66',
-  image: 'https://sourplash.com/featured/?palak,paneer',
-  description: 'Green spinach curry with paneer'
-},
-{
-  id: 'ni-32',
-  name: 'Dal Tadka',
-  category: 'north-indian',
-  ingredients: ['Toor Dal', 'Onion', 'Tomato', 'Spices', 'Ghee'],
-  instructions: ['Boil dal', 'Prepare ghee tempering', 'Mix and serve'],
-  cookingTime: '35 mins',
-  difficulty: 'Easy',
-  youtubeUrl: 'https://youtube.com/watch?v=sample67',
-  image: 'https://souplash.com/featured/?dal,tadka',
-  description: 'Lentil curry with ghee tempering'
-},
-{
-  id: 'ni-33',
-  name: 'Malai Kofta',
-  category: 'north-indian',
-  ingredients: ['Paneer', 'Potatoes', 'Cream', 'Tomato', 'Spices'],
-  instructions: ['Make kofta balls', 'Fry and cook in creamy gravy'],
-  cookingTime: '50 mins',
-  difficulty: 'Hard',
-  youtubeUrl: 'https://youtube.com/watch?v=sample68',
-  image: 'https://sourplash.com/featured/?malai,kofta',
-  description: 'Creamy curry with fried dumplings'
-},
-{
-  id: 'ni-34',
-  name: 'Amritsari Chole',
-  category: 'north-indian',
-  ingredients: ['Chickpeas', 'Tea Bag', 'Onions', 'Spices'],
-  instructions: ['Boil chole with tea', 'Prepare tangy masala', 'Mix well'],
-  cookingTime: '40 mins',
-  difficulty: 'Medium',
-  youtubeUrl: 'https://youtube.com/watch?v=sample69',
-  image: 'https://souplash.com/featured/?chole,curry',
-  description: 'Spicy Punjabi-style chickpea curry'
-},
-{
-  id: 'ni-35',
-  name: 'Jeera Rice',
-  category: 'north-indian',
-  ingredients: ['Rice', 'Cumin Seeds', 'Ghee', 'Salt'],
-  instructions: ['Fry cumin in ghee', 'Add rice and cook'],
-  cookingTime: '20 mins',
-  difficulty: 'Easy',
-  youtubeUrl: 'https://youtube.com/watch?v=sample70',
-  image: 'https://sourplash.com/featured/?jeera,rice',
-  description: 'Fragrant cumin-flavored rice'
-},
-{
-  id: 'ni-36',
-  name: 'Kadhi Pakora',
-  category: 'north-indian',
-  ingredients: ['Yogurt', 'Gram Flour', 'Onions', 'Spices'],
-  instructions: ['Make pakoras', 'Cook yogurt-based curry', 'Add pakoras'],
-  cookingTime: '50 mins',
-  difficulty: 'Medium',
-  youtubeUrl: 'https://youtube.com/watch?v=sample71',
-  image: 'https://sourplash.com/featured/?kadhi,pakora',
-  description: 'Spiced yogurt curry with fritters'
-},
-{
-  id: 'ni-37',
-  name: 'Pindi Chana',
-  category: 'north-indian',
-  ingredients: ['Chickpeas', 'Black Tea', 'Spices'],
-  instructions: ['Boil chickpeas', 'Dry-cook with masala'],
-  cookingTime: '30 mins',
-  difficulty: 'Easy',
-  youtubeUrl: 'https://youtube.com/watch?v=sample72',
-  image: 'https://sourplash.com/featured/?pindi,chana',
-  description: 'Dry spiced chickpeas from Punjab'
-},
-{
-  id: 'ni-38',
-  name: 'Boondi Raita',
-  category: 'north-indian',
-  ingredients: ['Curd', 'Boondi', 'Cumin', 'Salt', 'Coriander'],
-  instructions: ['Soak boondi', 'Mix with curd and spices'],
-  cookingTime: '10 mins',
-  difficulty: 'Easy',
-  youtubeUrl: 'https://youtube.com/watch?v=sample73',
-  image: 'https://sonsplash.com/featured/?raita,boondi',
-  description: 'Yogurt dip with crispy boondi'
-},
+    id: 'ni-26',
+    name: 'Paneer Lababdar',
+    category: 'north-indian',
+    ingredients: ['Paneer', 'Tomatoes', 'Onions', 'Cream', 'Spices'],
+    instructions: [
+      'Cut paneer into cubes and lightly fry them until golden brown',
+      'Finely chop 2 onions and 3 tomatoes',
+      'Heat oil in a pan and add cumin seeds',
+      'Add chopped onions and sauté until golden brown',
+      'Add ginger-garlic paste and cook for 2 minutes',
+      'Add chopped tomatoes and cook until soft and mushy',
+      'Add red chili powder, turmeric, garam masala, and salt to taste',
+      'Cook until oil starts to separate from the mixture',
+      'Let the mixture cool slightly and blend to a smooth paste',
+      'Return the paste to the pan and add 1/2 cup water',
+      'Bring to a boil and simmer for 5 minutes',
+      'Add the fried paneer cubes and fresh cream',
+      'Simmer for 3-4 minutes until paneer absorbs the flavors',
+      'Finish with kasoori methi and fresh coriander',
+      'Serve hot with naan or rice'
+    ],
+    cookingTime: '35 mins',
+    difficulty: 'Medium',
+    youtubeUrl: 'https://youtube.com/watch?v=sample61',
+    image: 'https://images.unsplash.com/photo-1631452180539-96aca7d48617?w=500&h=300&fit=crop',
+    description: 'Rich and creamy tomato-paneer curry'
+  },
+  {
+    id: 'ni-27',
+    name: 'Gobi Paratha',
+    category: 'north-indian',
+    ingredients: ['Cauliflower', 'Wheat Flour', 'Spices', 'Oil'],
+    instructions: [
+      'Grate cauliflower finely and squeeze out excess water',
+      'In a bowl, mix grated cauliflower with chopped green chilies, ginger, and coriander',
+      'Add red chili powder, garam masala, amchur powder, and salt to taste',
+      'Mix well and set aside for 10 minutes',
+      'Prepare wheat flour dough with water, salt, and oil',
+      'Divide dough into equal-sized balls',
+      'Take one ball and roll into a small circle',
+      'Place 2 tbsp of cauliflower mixture in the center',
+      'Bring the edges together and seal tightly',
+      'Dust with flour and roll into a circle (about 6-7 inches)',
+      'Heat a tawa and place the paratha on it',
+      'Cook on medium heat until bubbles appear',
+      'Flip and apply oil on both sides',
+      'Cook until golden brown spots appear',
+      'Serve hot with butter, pickle, and curd'
+    ],
+    cookingTime: '30 mins',
+    difficulty: 'Easy',
+    youtubeUrl: 'https://youtube.com/watch?v=sample62',
+    image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=500&h=300&fit=crop',
+    description: 'Spiced cauliflower stuffed flatbread'
+  },
+  {
+    id: 'ni-28',
+    name: 'Rajma Masala',
+    category: 'north-indian',
+    ingredients: ['Kidney Beans', 'Tomatoes', 'Onions', 'Spices'],
+    instructions: [
+      'Soak 1 cup kidney beans overnight in water',
+      'Pressure cook beans with salt and water for 5-6 whistles until soft',
+      'Drain and set aside (keep some cooking water)',
+      'Finely chop 2 onions and 3 tomatoes',
+      'Heat oil in a pan and add cumin seeds',
+      'Add chopped onions and sauté until golden brown',
+      'Add ginger-garlic paste and cook for 2 minutes',
+      'Add chopped tomatoes and cook until soft and mushy',
+      'Add red chili powder, turmeric, coriander powder, and garam masala',
+      'Cook until oil starts to separate from the mixture',
+      'Add the cooked kidney beans with some cooking water',
+      'Simmer on low heat for 20-25 minutes until gravy thickens',
+      'Stir occasionally to prevent sticking',
+      'Adjust consistency by adding water if needed',
+      'Finish with fresh coriander leaves and serve hot with rice'
+    ],
+    cookingTime: '45 mins',
+    difficulty: 'Medium',
+    youtubeUrl: 'https://youtube.com/watch?v=sample63',
+    image: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?w=500&h=300&fit=crop',
+    description: 'Comforting kidney bean curry'
+  },
+  {
+    id: 'ni-29',
+    name: 'Tandoori Roti',
+    category: 'north-indian',
+    ingredients: ['Wheat Flour', 'Yogurt', 'Salt', 'Baking Soda'],
+    instructions: [
+      'In a bowl, mix 2 cups wheat flour, 1/2 cup yogurt, 1/2 tsp salt, and 1/4 tsp baking soda',
+      'Add water gradually and knead into a soft, smooth dough',
+      'Cover with a damp cloth and let it rest for 30 minutes',
+      'Divide the dough into equal-sized balls',
+      'Roll each ball into a circle (about 6-7 inches)',
+      'Heat a tawa or griddle on medium-high heat',
+      'Place the rolled roti on the hot tawa',
+      'Cook until bubbles appear on the surface',
+      'Flip and cook the other side for 1-2 minutes',
+      'For tandoori effect: Hold the roti directly over flame using tongs',
+      'Cook until charred spots appear on both sides',
+      'Brush with butter and serve hot with curry',
+      'Can also be cooked on a gas stove by holding over flame'
+    ],
+    cookingTime: '20 mins',
+    difficulty: 'Easy',
+    youtubeUrl: 'https://youtube.com/watch?v=sample64',
+    image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=500&h=300&fit=crop',
+    description: 'Leavened flatbread with smoky flavor'
+  },
+  {
+    id: 'ni-30',
+    name: 'Aloo Gobi',
+    category: 'north-indian',
+    ingredients: ['Potatoes', 'Cauliflower', 'Spices', 'Onions'],
+    instructions: ['Sauté vegetables with spices', 'Cook until tender'],
+    cookingTime: '25 mins',
+    difficulty: 'Easy',
+    youtubeUrl: 'https://youtube.com/watch?v=sample65',
+    image: 'https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?w=500&h=300&fit=crop',
+    description: 'Dry sabzi with potatoes and cauliflower'
+  },
+  {
+    id: 'ni-31',
+    name: 'Palak Paneer',
+    category: 'north-indian',
+    ingredients: ['Spinach', 'Paneer', 'Cream', 'Spices'],
+    instructions: ['Blanch spinach', 'Blend with spices', 'Add paneer cubes'],
+    cookingTime: '30 mins',
+    difficulty: 'Medium',
+    youtubeUrl: 'https://youtube.com/watch?v=sample66',
+    image: 'https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=500&h=300&fit=crop',
+    description: 'Green spinach curry with paneer'
+  },
+  {
+    id: 'ni-32',
+    name: 'Dal Tadka',
+    category: 'north-indian',
+    ingredients: ['Toor Dal', 'Onion', 'Tomato', 'Spices', 'Ghee'],
+    instructions: ['Boil dal', 'Prepare ghee tempering', 'Mix and serve'],
+    cookingTime: '35 mins',
+    difficulty: 'Easy',
+    youtubeUrl: 'https://youtube.com/watch?v=sample67',
+    image: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?w=500&h=300&fit=crop',
+    description: 'Lentil curry with ghee tempering'
+  },
+  {
+    id: 'ni-33',
+    name: 'Malai Kofta',
+    category: 'north-indian',
+    ingredients: ['Paneer', 'Potatoes', 'Cream', 'Tomato', 'Spices'],
+    instructions: ['Make kofta balls', 'Fry and cook in creamy gravy'],
+    cookingTime: '50 mins',
+    difficulty: 'Hard',
+    youtubeUrl: 'https://youtube.com/watch?v=sample68',
+    image: 'https://images.unsplash.com/photo-1631452180539-96aca7d48617?w=500&h=300&fit=crop',
+    description: 'Creamy curry with fried dumplings'
+  },
+  {
+    id: 'ni-34',
+    name: 'Amritsari Chole',
+    category: 'north-indian',
+    ingredients: ['Chickpeas', 'Tea Bag', 'Onions', 'Spices'],
+    instructions: ['Boil chole with tea', 'Prepare tangy masala', 'Mix well'],
+    cookingTime: '40 mins',
+    difficulty: 'Medium',
+    youtubeUrl: 'https://youtube.com/watch?v=sample69',
+    image: 'https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=500&h=300&fit=crop',
+    description: 'Spicy Punjabi-style chickpea curry'
+  },
+  {
+    id: 'ni-35',
+    name: 'Jeera Rice',
+    category: 'north-indian',
+    ingredients: ['Rice', 'Cumin Seeds', 'Ghee', 'Salt'],
+    instructions: ['Fry cumin in ghee', 'Add rice and cook'],
+    cookingTime: '20 mins',
+    difficulty: 'Easy',
+    youtubeUrl: 'https://youtube.com/watch?v=sample70',
+    image: 'https://images.unsplash.com/photo-1563379091339-03246963d96c?w=500&h=300&fit=crop',
+    description: 'Fragrant cumin-flavored rice'
+  },
+  {
+    id: 'ni-36',
+    name: 'Kadhi Pakora',
+    category: 'north-indian',
+    ingredients: ['Yogurt', 'Gram Flour', 'Onions', 'Spices'],
+    instructions: ['Make pakoras', 'Cook yogurt-based curry', 'Add pakoras'],
+    cookingTime: '50 mins',
+    difficulty: 'Medium',
+    youtubeUrl: 'https://youtube.com/watch?v=sample71',
+    image: 'https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=500&h=300&fit=crop',
+    description: 'Spiced yogurt curry with fritters'
+  },
+  {
+    id: 'ni-37',
+    name: 'Pindi Chana',
+    category: 'north-indian',
+    ingredients: ['Chickpeas', 'Black Tea', 'Spices'],
+    instructions: ['Boil chickpeas', 'Dry-cook with masala'],
+    cookingTime: '30 mins',
+    difficulty: 'Easy',
+    youtubeUrl: 'https://youtube.com/watch?v=sample72',
+    image: 'https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=500&h=300&fit=crop',
+    description: 'Dry spiced chickpeas from Punjab'
+  },
+  {
+    id: 'ni-38',
+    name: 'Boondi Raita',
+    category: 'north-indian',
+    ingredients: ['Curd', 'Boondi', 'Cumin', 'Salt', 'Coriander'],
+    instructions: ['Soak boondi', 'Mix with curd and spices'],
+    cookingTime: '10 mins',
+    difficulty: 'Easy',
+    youtubeUrl: 'https://youtube.com/watch?v=sample73',
+    image: 'https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=500&h=300&fit=crop',
+    description: 'Yogurt dip with crispy boondi'
+  },
 
 
   // South Indian Recipes (25 items)
@@ -487,11 +707,24 @@ export const recipes: Recipe[] = [
     name: 'Dosa',
     category: 'south-indian',
     ingredients: ['Rice', 'Black Gram', 'Fenugreek Seeds', 'Salt'],
-    instructions: ['Soak rice and dal', 'Grind to batter', 'Ferment overnight', 'Make crispy crepes'],
+    instructions: [
+      'Soak 2 cups rice and 1/2 cup black gram separately for 6-8 hours',
+      'Add 1/4 tsp fenugreek seeds to the black gram while soaking',
+      'Drain water and grind rice to a smooth paste with water',
+      'Grind black gram to a fluffy paste with minimal water',
+      'Mix both batters together and add salt to taste',
+      'Cover and let the batter ferment overnight (8-12 hours)',
+      'The batter should rise and become slightly sour',
+      'Heat a non-stick tawa or griddle on medium heat',
+      'Pour a ladle of batter and spread in circular motion',
+      'Drizzle oil around the edges and cook until golden brown',
+      'Flip and cook the other side for 1-2 minutes',
+      'Serve hot with coconut chutney and sambar'
+    ],
     cookingTime: '30 mins',
     difficulty: 'Medium',
     youtubeUrl: 'https://youtube.com/watch?v=sample26',
-    image: 'https:/.unsplash.com/photo-1630383249896-424e482df921?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1630383249896-424e482df921?w=500&h=300&fit=crop',
     description: 'Crispy fermented rice and lentil crepe'
   },
   {
@@ -499,11 +732,24 @@ export const recipes: Recipe[] = [
     name: 'Idli',
     category: 'south-indian',
     ingredients: ['Rice', 'Black Gram', 'Salt'],
-    instructions: ['Soak and grind', 'Ferment batter', 'Steam in idli plates', 'Serve hot'],
+    instructions: [
+      'Soak 2 cups rice and 1/2 cup black gram separately for 6-8 hours',
+      'Drain water and grind rice to a smooth paste with water',
+      'Grind black gram to a fluffy paste with minimal water',
+      'Mix both batters together and add salt to taste',
+      'Cover and let the batter ferment overnight (8-12 hours)',
+      'The batter should rise and become slightly sour',
+      'Grease idli plates with oil',
+      'Pour batter into idli molds, filling 3/4th of each mold',
+      'Steam in a pressure cooker or steamer for 10-12 minutes',
+      'Remove from heat and let it cool for 2-3 minutes',
+      'Gently remove idlis from the molds using a spoon',
+      'Serve hot with coconut chutney and sambar'
+    ],
     cookingTime: '20 mins',
     difficulty: 'Easy',
     youtubeUrl: 'https://youtube.com/watch?v=sample27',
-    image: 'https://images.sh.com/photo-1630383249896-424e482df921?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1630383249896-424e482df921?w=500&h=300&fit=crop',
     description: 'Steamed rice and lentil cakes'
   },
   {
@@ -511,11 +757,25 @@ export const recipes: Recipe[] = [
     name: 'Sambar',
     category: 'south-indian',
     ingredients: ['Toor Dal', 'Vegetables', 'Tamarind', 'Sambar Powder', 'Curry Leaves'],
-    instructions: ['Cook dal', 'Add vegetables', 'Season with spices', 'Simmer'],
+    instructions: [
+      'Pressure cook 1 cup toor dal with turmeric and water for 3-4 whistles',
+      'Once cooked, mash the dal and set aside',
+      'Soak tamarind in warm water for 15 minutes and extract juice',
+      'Heat oil in a pan and add mustard seeds, cumin seeds, and curry leaves',
+      'Add finely chopped onions and sauté until translucent',
+      'Add chopped vegetables (carrots, beans, pumpkin) and cook for 5 minutes',
+      'Add tomato pieces and cook until soft',
+      'Add sambar powder, red chili powder, and salt to taste',
+      'Add the cooked dal and tamarind juice',
+      'Simmer for 15-20 minutes until vegetables are cooked',
+      'Adjust consistency by adding water if needed',
+      'For final tempering: Heat oil and add mustard seeds, curry leaves, and red chilies',
+      'Pour the tempering over sambar and serve hot with rice or idli'
+    ],
     cookingTime: '40 mins',
     difficulty: 'Medium',
     youtubeUrl: 'https://youtube.com/watch?v=sample28',
-    image: 'https://imageplash.com/photo-1585032226651-759b368d7246?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?w=500&h=300&fit=crop',
     description: 'Tangy lentil and vegetable stew'
   },
   {
@@ -523,11 +783,23 @@ export const recipes: Recipe[] = [
     name: 'Coconut Chutney',
     category: 'south-indian',
     ingredients: ['Coconut', 'Green Chilies', 'Ginger', 'Curry Leaves', 'Mustard Seeds'],
-    instructions: ['Grind coconut mixture', 'Temper with spices', 'Mix together', 'Serve'],
+    instructions: [
+      'Grate fresh coconut or use frozen grated coconut',
+      'In a blender, add grated coconut, green chilies, ginger, and salt',
+      'Add a little water and grind to a smooth paste',
+      'Transfer to a serving bowl',
+      'For tempering: Heat oil in a small pan',
+      'Add mustard seeds and let them crackle',
+      'Add curry leaves and dried red chilies',
+      'Fry for 30 seconds until curry leaves become crisp',
+      'Pour the hot tempering over the chutney',
+      'Mix well and serve with dosa, idli, or vada',
+      'Can be stored in refrigerator for 2-3 days'
+    ],
     cookingTime: '10 mins',
     difficulty: 'Easy',
     youtubeUrl: 'https://youtube.com/watch?v=sample29',
-    image: 'https://imageplash.com/photo-1596797038530-2c107229654b?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1596797038530-2c107229654b?w=500&h=300&fit=crop',
     description: 'Fresh coconut accompaniment'
   },
   {
@@ -535,11 +807,25 @@ export const recipes: Recipe[] = [
     name: 'Rasam',
     category: 'south-indian',
     ingredients: ['Tomatoes', 'Tamarind', 'Rasam Powder', 'Dal Water', 'Curry Leaves'],
-    instructions: ['Extract tamarind', 'Cook tomatoes', 'Add spices', 'Simmer'],
+    instructions: [
+      'Soak tamarind in warm water for 15 minutes and extract juice',
+      'Pressure cook 1/4 cup toor dal with water for 2-3 whistles',
+      'Extract dal water and keep aside',
+      'Heat oil in a pan and add mustard seeds, cumin seeds, and curry leaves',
+      'Add finely chopped onions and sauté until translucent',
+      'Add chopped tomatoes and cook until soft and mushy',
+      'Add ginger-garlic paste and cook for 2 minutes',
+      'Add rasam powder, red chili powder, and salt to taste',
+      'Add tamarind juice and dal water',
+      'Simmer for 10-15 minutes on medium heat',
+      'Add fresh coriander leaves and black pepper',
+      'For final tempering: Heat ghee and add garlic, curry leaves, and red chilies',
+      'Pour the tempering over rasam and serve hot with rice'
+    ],
     cookingTime: '25 mins',
     difficulty: 'Easy',
     youtubeUrl: 'https://youtube.com/watch?v=sample30',
-    image: 'https://imsplash.com/photo-1585032226651-759b368d7246?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?w=500&h=300&fit=crop',
     description: 'Tangy soup with spices'
   },
   {
@@ -547,11 +833,25 @@ export const recipes: Recipe[] = [
     name: 'Vada',
     category: 'south-indian',
     ingredients: ['Black Gram', 'Green Chilies', 'Ginger', 'Curry Leaves', 'Oil'],
-    instructions: ['Soak and grind dal', 'Add seasonings', 'Shape into donuts', 'Deep fry'],
+    instructions: [
+      'Soak 1 cup black gram (urad dal) in water for 4-6 hours',
+      'Drain water completely and grind to a smooth, fluffy paste',
+      'Add very little water while grinding to maintain consistency',
+      'Transfer to a bowl and add finely chopped green chilies, ginger, and curry leaves',
+      'Add salt to taste and mix well with your hands',
+      'The batter should be thick and sticky, not runny',
+      'Heat oil in a deep pan for frying',
+      'Wet your hands with water and take a small portion of batter',
+      'Shape into a round disc with a hole in the center (like a donut)',
+      'Gently slide into hot oil and fry on medium heat',
+      'Fry until golden brown and crispy on both sides',
+      'Remove and drain on paper towels',
+      'Serve hot with coconut chutney and sambar'
+    ],
     cookingTime: '30 mins',
     difficulty: 'Medium',
     youtubeUrl: 'https://youtube.com/watch?v=sample31',
-    image: 'https://isplash.com/photo-1630383249896-424e482df921?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1630383249896-424e482df921?w=500&h=300&fit=crop',
     description: 'Crispy lentil donuts'
   },
   {
@@ -559,11 +859,24 @@ export const recipes: Recipe[] = [
     name: 'Uttapam',
     category: 'south-indian',
     ingredients: ['Dosa Batter', 'Onions', 'Tomatoes', 'Green Chilies', 'Coriander'],
-    instructions: ['Spread thick batter', 'Add toppings', 'Cook like pancake', 'Serve hot'],
+    instructions: [
+      'Use the same dosa batter (should be slightly thick)',
+      'Finely chop onions, tomatoes, green chilies, and coriander leaves',
+      'Heat a non-stick tawa or griddle on medium heat',
+      'Pour a ladle of batter and spread it in a thick circle (thicker than dosa)',
+      'Immediately sprinkle chopped onions, tomatoes, green chilies, and coriander',
+      'Press the toppings gently into the batter with a spatula',
+      'Drizzle oil around the edges and on top',
+      'Cook on medium heat until the bottom is golden brown',
+      'Flip carefully and cook the other side for 2-3 minutes',
+      'The uttapam should be soft and fluffy, not crispy like dosa',
+      'Remove from heat and serve hot with coconut chutney and sambar',
+      'Can also be served with tomato chutney or mint chutney'
+    ],
     cookingTime: '15 mins',
     difficulty: 'Easy',
     youtubeUrl: 'https://youtube.com/watch?v=sample32',
-    image: 'https://isplash.com/photo-1630383249896-424e482df921?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1630383249896-424e482df921?w=500&h=300&fit=crop',
     description: 'Thick pancake with vegetables'
   },
   {
@@ -571,11 +884,25 @@ export const recipes: Recipe[] = [
     name: 'Upma',
     category: 'south-indian',
     ingredients: ['Semolina', 'Vegetables', 'Mustard Seeds', 'Curry Leaves', 'Ginger'],
-    instructions: ['Roast semolina', 'Temper spices', 'Add water', 'Cook until thick'],
+    instructions: [
+      'Dry roast 1 cup semolina (rava) in a pan until light golden and aromatic',
+      'Remove from heat and set aside to cool',
+      'Finely chop onions, carrots, green peas, and ginger',
+      'Heat oil in a pan and add mustard seeds, urad dal, and chana dal',
+      'When seeds crackle, add curry leaves and chopped green chilies',
+      'Add chopped onions and sauté until translucent',
+      'Add chopped ginger and vegetables, cook for 2-3 minutes',
+      'Add 2 cups of hot water and salt to taste',
+      'Bring to a boil and slowly add the roasted semolina while stirring',
+      'Stir continuously to prevent lumps from forming',
+      'Cook on medium heat until all water is absorbed and upma is thick',
+      'Cover and let it rest for 2-3 minutes',
+      'Garnish with fresh coriander leaves and serve hot with coconut chutney'
+    ],
     cookingTime: '20 mins',
     difficulty: 'Easy',
     youtubeUrl: 'https://youtube.com/watch?v=sample33',
-    image: 'https://imsplash.com/photo-1596797038530-2c107229654b?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1596797038530-2c107229654b?w=500&h=300&fit=crop',
     description: 'Savory semolina porridge'
   },
   {
@@ -583,23 +910,51 @@ export const recipes: Recipe[] = [
     name: 'Pongal',
     category: 'south-indian',
     ingredients: ['Rice', 'Moong Dal', 'Ghee', 'Cumin', 'Black Pepper', 'Ginger'],
-    instructions: ['Cook rice and dal', 'Add ghee and spices', 'Mix well', 'Serve hot'],
+    instructions: [
+      'Wash 1 cup rice and 1/4 cup moong dal together',
+      'Heat 2 tbsp ghee in a pressure cooker',
+      'Add 1 tsp cumin seeds and 1 tsp black peppercorns',
+      'When seeds crackle, add finely chopped ginger and curry leaves',
+      'Add the washed rice and dal mixture',
+      'Add 3 cups of water and salt to taste',
+      'Pressure cook for 3-4 whistles on medium heat',
+      'Let the pressure release naturally',
+      'Open the cooker and mash the pongal slightly',
+      'Add more ghee and mix well',
+      'Cook on low heat for 2-3 minutes if needed to adjust consistency',
+      'The pongal should be soft and slightly mushy',
+      'Serve hot with coconut chutney and sambar'
+    ],
     cookingTime: '30 mins',
     difficulty: 'Easy',
     youtubeUrl: 'https://youtube.com/watch?v=sample34',
-    image: 'https://imasplash.com/photo-1563379091339-03246963d96c?w=500&h=300&fit=crop',
-    description: 'Comfort rice and lentil dish'
+    image: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?w=500&h=300&fit=crop',
+    description: 'Comforting rice and lentil dish'
   },
   {
     id: 'si-10',
     name: 'Curd Rice',
     category: 'south-indian',
     ingredients: ['Rice', 'Curd', 'Mustard Seeds', 'Curry Leaves', 'Green Chilies'],
-    instructions: ['Cook rice', 'Mix with curd', 'Temper spices', 'Combine'],
+    instructions: [
+      'Cook 1 cup rice with extra water until soft and mushy',
+      'Let the rice cool completely to room temperature',
+      'In a bowl, whisk 2 cups fresh curd until smooth',
+      'Mix the cooled rice with curd and add salt to taste',
+      'For tempering: Heat 2 tbsp oil in a small pan',
+      'Add 1 tsp mustard seeds and let them crackle',
+      'Add 1 tsp urad dal and 1 tsp chana dal',
+      'When dals turn golden, add curry leaves and chopped green chilies',
+      'Add finely chopped ginger and sauté for 30 seconds',
+      'Pour the hot tempering over the curd rice',
+      'Mix well and garnish with fresh coriander leaves',
+      'Can be served immediately or chilled for 30 minutes',
+      'Serve with pickle or papad for a complete meal'
+    ],
     cookingTime: '15 mins',
     difficulty: 'Easy',
     youtubeUrl: 'https://youtube.com/watch?v=sample35',
-    image: 'https://nsplash.com/photo-1563379091339-03246963d96c?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?w=500&h=300&fit=crop',
     description: 'Cooling rice with yogurt'
   },
   {
@@ -607,11 +962,16 @@ export const recipes: Recipe[] = [
     name: 'Filter Coffee',
     category: 'south-indian',
     ingredients: ['Coffee Powder', 'Milk', 'Sugar', 'Water'],
-    instructions: ['Brew strong decoction', 'Heat milk', 'Mix with sugar', 'Serve hot'],
+    instructions: [
+      'Brew strong decoction',
+      'Heat milk',
+      'Mix with sugar',
+      'Serve hot'
+    ],
     cookingTime: '10 mins',
     difficulty: 'Easy',
     youtubeUrl: 'https://youtube.com/watch?v=sample36',
-    image: 'https://nsplash.com/photo-1571091718767-18b5b1457add?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=500&h=300&fit=crop',
     description: 'Traditional South Indian coffee'
   },
   {
@@ -619,11 +979,16 @@ export const recipes: Recipe[] = [
     name: 'Appam',
     category: 'south-indian',
     ingredients: ['Rice', 'Coconut', 'Yeast', 'Sugar', 'Salt'],
-    instructions: ['Soak rice', 'Grind with coconut', 'Ferment', 'Cook in appam pan'],
+    instructions: [
+      'Soak rice',
+      'Grind with coconut',
+      'Ferment',
+      'Cook in appam pan'
+    ],
     cookingTime: '20 mins',
     difficulty: 'Medium',
     youtubeUrl: 'https://youtube.com/watch?v=sample37',
-    image: 'https://nsplash.com/photo-1630383249896-424e482df921?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1630383249896-424e482df921?w=500&h=300&fit=crop',
     description: 'Fermented rice pancakes'
   },
   {
@@ -631,11 +996,16 @@ export const recipes: Recipe[] = [
     name: 'Chicken Curry (South Indian)',
     category: 'south-indian',
     ingredients: ['Chicken', 'Coconut', 'Curry Leaves', 'Red Chilies', 'Spices'],
-    instructions: ['Marinate chicken', 'Grind coconut paste', 'Cook chicken', 'Add paste'],
+    instructions: [
+      'Marinate chicken',
+      'Grind coconut paste',
+      'Cook chicken',
+      'Add paste'
+    ],
     cookingTime: '45 mins',
     difficulty: 'Medium',
     youtubeUrl: 'https://youtube.com/watch?v=sample38',
-    image: 'https://plash.com/photo-1603894584373-5ac82b2ae398?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=500&h=300&fit=crop',
     description: 'Coconut based chicken curry'
   },
   {
@@ -643,11 +1013,16 @@ export const recipes: Recipe[] = [
     name: 'Fish Curry',
     category: 'south-indian',
     ingredients: ['Fish', 'Coconut', 'Tamarind', 'Curry Leaves', 'Red Chilies'],
-    instructions: ['Clean fish', 'Make coconut paste', 'Cook curry', 'Add fish'],
+    instructions: [
+      'Clean fish',
+      'Make coconut paste',
+      'Cook curry',
+      'Add fish'
+    ],
     cookingTime: '30 mins',
     difficulty: 'Medium',
     youtubeUrl: 'https://youtube.com/watch?v=sample39',
-    image: 'https://plash.com/photo-1565299624946-b28f40a0ca4b?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=500&h=300&fit=crop',
     description: 'Tangy fish in coconut curry'
   },
   {
@@ -655,11 +1030,26 @@ export const recipes: Recipe[] = [
     name: 'Payasam',
     category: 'south-indian',
     ingredients: ['Rice', 'Milk', 'Sugar', 'Ghee', 'Cashews', 'Raisins'],
-    instructions: ['Cook rice in milk', 'Add sugar', 'Garnish with nuts', 'Serve'],
+    instructions: [
+      'Wash 1/4 cup rice and soak in water for 30 minutes',
+      'Drain water and set aside',
+      'In a heavy-bottomed pan, bring 4 cups milk to a boil',
+      'Add the soaked rice and cook on medium heat',
+      'Stir continuously to prevent sticking',
+      'Cook until rice is soft and milk reduces to half',
+      'Add 1/2 cup sugar and stir well',
+      'Continue cooking until the mixture thickens',
+      'In a small pan, heat 2 tbsp ghee',
+      'Fry cashews and raisins until golden brown',
+      'Add cardamom powder and saffron strands to the payasam',
+      'Cook for 2-3 more minutes until desired consistency',
+      'Garnish with fried nuts and serve hot or chilled',
+      'Can be served warm or refrigerated for 2-3 hours'
+    ],
     cookingTime: '40 mins',
     difficulty: 'Easy',
     youtubeUrl: 'https://youtube.com/watch?v=sample40',
-    image: 'https://lash.com/photo-1571091718767-18b5b1457add?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=500&h=300&fit=crop',
     description: 'Sweet rice pudding'
   },
   {
@@ -667,11 +1057,25 @@ export const recipes: Recipe[] = [
     name: 'Banana Chips',
     category: 'south-indian',
     ingredients: ['Raw Bananas', 'Coconut Oil', 'Salt', 'Turmeric'],
-    instructions: ['Slice bananas', 'Heat oil', 'Deep fry', 'Season with salt'],
+    instructions: [
+      'Peel raw bananas and slice them thinly (about 1/8 inch thick)',
+      'Soak the slices in water with a pinch of turmeric for 10 minutes',
+      'Drain water completely and pat dry with a clean cloth',
+      'Heat coconut oil in a deep pan on medium-high heat',
+      'Test the oil temperature by dropping a small slice - it should sizzle',
+      'Add banana slices in small batches to avoid overcrowding',
+      'Fry on medium heat until golden brown and crispy',
+      'Stir occasionally to ensure even cooking',
+      'Remove from oil and drain on paper towels',
+      'While still hot, sprinkle salt and mix gently',
+      'Let them cool completely before storing',
+      'Store in an airtight container for up to 1 week',
+      'Serve as a snack or accompaniment with meals'
+    ],
     cookingTime: '20 mins',
     difficulty: 'Easy',
     youtubeUrl: 'https://youtube.com/watch?v=sample41',
-    image: 'https://lash.com/photo-1610797198511-df5057066b3c?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1610797198511-df5057066b3c?w=500&h=300&fit=crop',
     description: 'Crispy banana slices'
   },
   {
@@ -679,11 +1083,26 @@ export const recipes: Recipe[] = [
     name: 'Puttu',
     category: 'south-indian',
     ingredients: ['Rice Flour', 'Coconut', 'Salt', 'Water'],
-    instructions: ['Mix rice flour with water', 'Layer with coconut', 'Steam', 'Serve'],
+    instructions: [
+      'In a bowl, mix 2 cups rice flour with 1/2 tsp salt',
+      'Gradually add water while mixing to make the flour moist',
+      'The mixture should hold together when pressed but crumble easily',
+      'Grate fresh coconut and set aside',
+      'Take a puttu maker or steamer and grease it lightly',
+      'Layer the bottom with grated coconut',
+      'Add a layer of rice flour mixture',
+      'Continue layering: coconut, rice flour, coconut, rice flour',
+      'Top with a final layer of coconut',
+      'Steam for 8-10 minutes on medium heat',
+      'Remove from steamer and let it cool for 2-3 minutes',
+      'Gently push the puttu out using a wooden stick',
+      'Serve hot with kadala curry, banana, or sugar',
+      'Can also be served with coconut chutney'
+    ],
     cookingTime: '25 mins',
     difficulty: 'Medium',
     youtubeUrl: 'https://youtube.com/watch?v=sample42',
-    image: 'https://ilash.com/photo-1596797038530-2c107229654b?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1596797038530-2c107229654b?w=500&h=300&fit=crop',
     description: 'Steamed rice flour cylinders'
   },
   {
@@ -691,11 +1110,27 @@ export const recipes: Recipe[] = [
     name: 'Kozhukattai',
     category: 'south-indian',
     ingredients: ['Rice Flour', 'Coconut', 'Jaggery', 'Cardamom', 'Water'],
-    instructions: ['Make dough', 'Prepare filling', 'Shape dumplings', 'Steam'],
+    instructions: [
+      'For the outer dough: Mix 1 cup rice flour with 1/2 cup hot water',
+      'Add a pinch of salt and knead into a smooth dough',
+      'Cover and let it rest for 10 minutes',
+      'For the filling: Grate fresh coconut and jaggery',
+      'In a pan, heat 1 tbsp ghee and add grated coconut',
+      'Add grated jaggery and cardamom powder',
+      'Cook on low heat until jaggery melts and mixture thickens',
+      'Let the filling cool completely',
+      'Divide the dough into small balls',
+      'Roll each ball into a small circle',
+      'Place 1 tsp filling in the center',
+      'Bring the edges together and seal tightly',
+      'Shape into a small dumpling or crescent',
+      'Steam in a steamer for 8-10 minutes',
+      'Serve hot or at room temperature'
+    ],
     cookingTime: '35 mins',
     difficulty: 'Medium',
     youtubeUrl: 'https://youtube.com/watch?v=sample43',
-    image: 'https://lash.com/photo-1571091718767-18b5b1457add?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=500&h=300&fit=crop',
     description: 'Sweet rice dumplings'
   },
   {
@@ -703,23 +1138,42 @@ export const recipes: Recipe[] = [
     name: 'Lemon Rice',
     category: 'south-indian',
     ingredients: ['Rice', 'Lemon Juice', 'Mustard Seeds', 'Curry Leaves', 'Peanuts', 'Turmeric'],
-    instructions: ['Cook rice', 'Temper spices', 'Add lemon juice', 'Mix'],
+    instructions: [
+      'Cook 2 cups rice with extra water until soft and fluffy',
+      'Spread the cooked rice on a plate and let it cool completely',
+      'In a pan, heat 3 tbsp oil and add 1 tsp mustard seeds',
+      'When seeds crackle, add 1 tsp urad dal and 1 tsp chana dal',
+      'Add curry leaves and chopped green chilies',
+      'Add 1/4 cup peanuts and fry until golden brown',
+      'Add 1/2 tsp turmeric powder and mix well',
+      'Add the cooled rice and mix gently',
+      'Add salt to taste and 2-3 tbsp lemon juice',
+      'Mix well and cook on low heat for 2-3 minutes',
+      'Garnish with fresh coriander leaves',
+      'Serve hot with papad or pickle',
+      'Can be served as a complete meal or with curd'
+    ],
     cookingTime: '20 mins',
     difficulty: 'Easy',
     youtubeUrl: 'https://youtube.com/watch?v=sample44',
-    image: 'https://lash.com/photo-1563379091339-03246963d96c?w=500&h=300&fit=crop',
-    description: 'Tangy lemon flavored rice'
+    image: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?w=500&h=300&fit=crop',
+    description: 'Tangy lemon-flavored rice'
   },
   {
     id: 'si-20',
     name: 'Tamarind Rice',
     category: 'south-indian',
     ingredients: ['Rice', 'Tamarind', 'Mustard Seeds', 'Red Chilies', 'Peanuts', 'Curry Leaves'],
-    instructions: ['Cook rice', 'Extract tamarind', 'Temper spices', 'Mix all'],
+    instructions: [
+      'Cook rice',
+      'Extract tamarind',
+      'Temper spices',
+      'Mix all'
+    ],
     cookingTime: '25 mins',
     difficulty: 'Easy',
     youtubeUrl: 'https://youtube.com/watch?v=sample45',
-    image: 'https://imagash.com/photo-1563379091339-03246963d96c?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1563379091339-03246963d96c?w=500&h=300&fit=crop',
     description: 'Tangy tamarind rice'
   },
   {
@@ -727,11 +1181,16 @@ export const recipes: Recipe[] = [
     name: 'Aviyal',
     category: 'south-indian',
     ingredients: ['Mixed Vegetables', 'Coconut', 'Green Chilies', 'Curry Leaves', 'Coconut Oil'],
-    instructions: ['Cut vegetables', 'Cook with minimal water', 'Add coconut paste', 'Finish with oil'],
+    instructions: [
+      'Cut vegetables',
+      'Cook with minimal water',
+      'Add coconut paste',
+      'Finish with oil'
+    ],
     cookingTime: '30 mins',
     difficulty: 'Medium',
     youtubeUrl: 'https://youtube.com/watch?v=sample46',
-    image: 'https://imagesh.com/photo-1596797038530-2c107229654b?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1596797038530-2c107229654b?w=500&h=300&fit=crop',
     description: 'Mixed vegetable curry with coconut'
   },
   {
@@ -739,11 +1198,16 @@ export const recipes: Recipe[] = [
     name: 'Murukku',
     category: 'south-indian',
     ingredients: ['Rice Flour', 'Black Gram Flour', 'Sesame Seeds', 'Cumin', 'Salt', 'Oil'],
-    instructions: ['Mix flours', 'Add seasonings', 'Shape spirals', 'Deep fry'],
+    instructions: [
+      'Mix flours',
+      'Add seasonings',
+      'Shape spirals',
+      'Deep fry'
+    ],
     cookingTime: '40 mins',
     difficulty: 'Medium',
     youtubeUrl: 'https://youtube.com/watch?v=sample47',
-    image: 'https://imagesh.com/photo-1610797198511-df5057066b3c?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1610797198511-df5057066b3c?w=500&h=300&fit=crop',
     description: 'Crispy spiral snacks'
   },
   {
@@ -751,11 +1215,16 @@ export const recipes: Recipe[] = [
     name: 'Pepper Chicken',
     category: 'south-indian',
     ingredients: ['Chicken', 'Black Pepper', 'Curry Leaves', 'Onions', 'Ginger', 'Garlic'],
-    instructions: ['Marinate chicken', 'Sauté with pepper', 'Add curry leaves', 'Cook until dry'],
+    instructions: [
+      'Marinate chicken',
+      'Sauté with pepper',
+      'Add curry leaves',
+      'Cook until dry'
+    ],
     cookingTime: '35 mins',
     difficulty: 'Medium',
     youtubeUrl: 'https://youtube.com/watch?v=sample48',
-    image: 'https://imagesh.com/photo-1603894584373-5ac82b2ae398?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=500&h=300&fit=crop',
     description: 'Spicy pepper flavored chicken'
   },
   {
@@ -763,11 +1232,16 @@ export const recipes: Recipe[] = [
     name: 'Coconut Barfi',
     category: 'south-indian',
     ingredients: ['Coconut', 'Sugar', 'Milk', 'Cardamom', 'Ghee'],
-    instructions: ['Grate coconut', 'Cook with sugar', 'Add milk', 'Set and cut'],
+    instructions: [
+      'Grate coconut',
+      'Cook with sugar',
+      'Add milk',
+      'Set and cut'
+    ],
     cookingTime: '30 mins',
     difficulty: 'Easy',
     youtubeUrl: 'https://youtube.com/watch?v=sample49',
-    image: 'https://imageh.com/photo-1571091718767-18b5b1457add?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=500&h=300&fit=crop',
     description: 'Sweet coconut squares'
   },
   {
@@ -775,156 +1249,16 @@ export const recipes: Recipe[] = [
     name: 'Theeyal',
     category: 'south-indian',
     ingredients: ['Vegetables', 'Coconut', 'Tamarind', 'Red Chilies', 'Coriander Seeds'],
-    instructions: ['Roast spices', 'Grind with coconut', 'Cook vegetables', 'Add paste'],
+    instructions: [
+      'Roast spices',
+      'Grind with coconut',
+      'Cook vegetables',
+      'Add paste'
+    ],
     cookingTime: '35 mins',
     difficulty: 'Medium',
     youtubeUrl: 'https://youtube.com/watch?v=sample50',
-    image: 'https://imagh.com/photo-1596797038530-2c107229654b?w=500&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1596797038530-2c107229654b?w=500&h=300&fit=crop',
     description: 'Roasted coconut curry'
-  },
-  {
-  id: 'si-26',
-  name: 'Ragi Dosa',
-  category: 'south-indian',
-  ingredients: ['Ragi Flour', 'Rice Flour', 'Curd', 'Spices'],
-  instructions: ['Mix ingredients', 'Ferment slightly', 'Make dosas'],
-  cookingTime: '25 mins',
-  difficulty: 'Easy',
-  youtubeUrl: 'https://youtube.com/watch?v=sample74',
-  image: 'https://soplash.com/featured/?ragi,dosa',
-  description: 'Healthy millet dosa'
-},
-{
-  id: 'si-27',
-  name: 'Idiyappam',
-  category: 'south-indian',
-  ingredients: ['Rice Flour', 'Water', 'Salt'],
-  instructions: ['Make dough', 'Press into noodles', 'Steam'],
-  cookingTime: '20 mins',
-  difficulty: 'Medium',
-  youtubeUrl: 'https://youtube.com/watch?v=sample75',
-  image: 'https://plash.com/featured/?idiyappam',
-  description: 'Steamed string hoppers'
-},
-{
-  id: 'si-28',
-  name: 'Pesarattu',
-  category: 'south-indian',
-  ingredients: ['Green Gram', 'Ginger', 'Green Chilies'],
-  instructions: ['Soak and grind dal', 'Cook like dosa'],
-  cookingTime: '30 mins',
-  difficulty: 'Easy',
-  youtubeUrl: 'https://youtube.com/watch?v=sample76',
-  image: 'https://splash.com/featured/?pesarattu',
-  description: 'Moong dal crepes'
-},
-{
-  id: 'si-29',
-  name: 'Sundal',
-  category: 'south-indian',
-  ingredients: ['Chickpeas', 'Coconut', 'Mustard Seeds', 'Curry Leaves'],
-  instructions: ['Boil chickpeas', 'Temper with spices', 'Add coconut'],
-  cookingTime: '15 mins',
-  difficulty: 'Easy',
-  youtubeUrl: 'https://youtube.com/watch?v=sample77',
-  image: 'https://slash.com/featured/?sundal',
-  description: 'Dry chickpea snack with coconut'
-},
-{
-  id: 'si-30',
-  name: 'Cabbage Thoran',
-  category: 'south-indian',
-  ingredients: ['Cabbage', 'Coconut', 'Mustard', 'Green Chilies'],
-  instructions: ['Sauté cabbage', 'Add coconut mixture'],
-  cookingTime: '20 mins',
-  difficulty: 'Easy',
-  youtubeUrl: 'https://youtube.com/watch?v=sample78',
-  image: 'https://ssplash.com/featured/?cabbage,thoran',
-  description: 'Kerala-style cabbage stir fry'
-},
-{
-  id: 'si-31',
-  name: 'Mysore Bonda',
-  category: 'south-indian',
-  ingredients: ['Urad Dal', 'Curd', 'Rice Flour', 'Green Chilies'],
-  instructions: ['Prepare batter', 'Shape and deep-fry'],
-  cookingTime: '30 mins',
-  difficulty: 'Medium',
-  youtubeUrl: 'https://youtube.com/watch?v=sample79',
-  image: 'https://soplash.com/featured/?mysore,bonda',
-  description: 'Fried savory snack from Karnataka'
-},
-{
-  id: 'si-32',
-  name: 'Tomato Rasam',
-  category: 'south-indian',
-  ingredients: ['Tomatoes', 'Tamarind', 'Spices', 'Coriander'],
-  instructions: ['Simmer ingredients', 'Add tempering'],
-  cookingTime: '15 mins',
-  difficulty: 'Easy',
-  youtubeUrl: 'https://youtube.com/watch?v=sample80',
-  image: 'https://source.unsplash.com/featured/?rasam,tomato',
-  description: 'Tangy tomato soup'
-},
-{
-  id: 'si-33',
-  name: 'Coconut Chutney',
-  category: 'south-indian',
-  ingredients: ['Coconut', 'Green Chilies', 'Curry Leaves'],
-  instructions: ['Grind coconut mix', 'Temper and mix'],
-  cookingTime: '10 mins',
-  difficulty: 'Easy',
-  youtubeUrl: 'https://youtube.com/watch?v=sample81',
-  image: 'https://source.unsplash.com/featured/?coconut,chutney',
-  description: 'Classic chutney with fresh coconut'
-},
-{
-  id: 'si-34',
-  name: 'Vegetable Kurma',
-  category: 'south-indian',
-  ingredients: ['Mixed Vegetables', 'Coconut', 'Spices'],
-  instructions: ['Cook vegetables', 'Add coconut masala', 'Simmer'],
-  cookingTime: '40 mins',
-  difficulty: 'Medium',
-  youtubeUrl: 'https://youtube.com/watch?v=sample82',
-  image: 'https://source.unsplash.com/featured/?vegetable,kurma',
-  description: 'Creamy veg curry with coconut base'
-},
-{
-  id: 'si-35',
-  name: 'Filter Coffee',
-  category: 'south-indian',
-  ingredients: ['Coffee Powder', 'Milk', 'Sugar'],
-  instructions: ['Brew decoction', 'Mix with milk and sugar'],
-  cookingTime: '10 mins',
-  difficulty: 'Easy',
-  youtubeUrl: 'https://youtube.com/watch?v=sample83',
-  image: 'https://source.unsplash.com/featured/?filter,coffee',
-  description: 'Traditional South Indian coffee'
-},
-{
-  id: 'si-36',
-  name: 'Uppittu (Upma)',
-  category: 'south-indian',
-  ingredients: ['Rava', 'Mustard', 'Onions', 'Curry Leaves'],
-  instructions: ['Roast rava', 'Sauté and mix with hot water'],
-  cookingTime: '15 mins',
-  difficulty: 'Easy',
-  youtubeUrl: 'https://youtube.com/watch?v=sample84',
-  image: 'https://source.unsplash.com/featured/?upma',
-  description: 'Semolina breakfast dish'
-},
-{
-  id: 'si-37',
-  name: 'Avial',
-  category: 'south-indian',
-  ingredients: ['Mixed Vegetables', 'Curd', 'Coconut', 'Curry Leaves'],
-  instructions: ['Boil vegetables', 'Add coconut-curd mixture'],
-  cookingTime: '30 mins',
-  difficulty: 'Medium',
-  youtubeUrl: 'https://youtube.com/watch?v=sample85',
-  image: 'https://source.unsplash.com/featured/?avial',
-  description: 'Mixed vegetable dish with coconut-curd base'
-}
-
+  }
 ];
